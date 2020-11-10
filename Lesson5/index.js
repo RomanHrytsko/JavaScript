@@ -226,40 +226,179 @@ const car = {
 // changeYear(6);
 // addDriver(carDriver);
 
-function carConstructor(model, creator, year, maxSpeed, driverObj) {
-  this.model = model;
-  this.creator = creator;
-  this.year = year;
-  this.maxSpeed = maxSpeed;
-  this.driver = driverObj;
+// Fucntion constructor
 
-  function drive(speed) {
-    console.log(`їдемо зі швидкістю ${speed}km на годину`);
-  }
-  function info(arguments) {
-    for (let elem of arguments) {
-      console.log(`Info ${elem}`);
-    }
-  }
-  function increaseMaxSpeed(newSpeed) {
-    console.log(`Max speed was increased ${this.maxSpeed + newSpeed}`);
-  }
-  function changeYear(newValue) {
-    this.year += newValue;
-    console.log(`Year war upgraded to ${this.year}`);
-  }
-  function driverr(newDriver) {
-    for (let elem in newDriver) {
-      this.driver = newDriver;
-      console.log(newDriver[elem]);
-    }
-  }
+// function carConstructor(model, creator, year, maxSpeed) {
+//   this.model = model;
+//   this.creator = creator;
+//   this.year = year;
+//   this.maxSpeed = maxSpeed;
 
-  drive(120);
-  info(arguments);
-  increaseMaxSpeed(50);
-  changeYear(5);
-  driverr(this.driver);
+//   this.drive = function () {
+//     console.log(`їдемо зі швидкістю ${this.maxSpeed}km на годину`);
+//   };
+//   this.info = function () {
+//     console.log(this);
+//   };
+
+//   this.increaseMaxSpeed = function (newSpeed) {
+//     this.maxSpeed += newSpeed;
+//     console.log(`Max speed was increased  to ${this.maxSpeed}`);
+//   };
+//   this.changeYear = function (newValue) {
+//     this.year = newValue;
+//     console.log(`Year war changed on ${this.year}`);
+//   };
+//   this.addDriver = function (driver) {
+//     this.driver = driver;
+//   };
+// }
+
+// let newCar = new carConstructor("Opel", "Germany", 2014, 300);
+// newCar.drive();
+// newCar.info();
+// newCar.increaseMaxSpeed(100);
+// newCar.changeYear(2020);
+// newCar.addDriver(carDriver);
+
+// - Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+// -- drive () - яка виводить в консоль "їдемо зі швидкістю {максимальна швидкість} на годину"
+// -- info () - яка виводить всю інформацію про автомобіль
+// -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+// -- changeYear (newValue) - змінює рік випуску на значення newValue
+// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
+// ==============================================
+
+// class CarCreator {
+//   constructor(model, creator, year, maxSpeed) {
+//     this.model = model;
+//     this.creator = creator;
+//     this.year = year;
+//     this.maxSpeed = maxSpeed;
+//   }
+//   drive() {
+//     console.log(`їдемо зі швидкістю ${this.maxSpeed}km на годину`);
+//   }
+//   info() {
+//     console.log(this);
+//   }
+//   increaseMaxSpeed(newSpeed) {
+//     console.log(`Max speed was increased to ${this.maxSpeed + newSpeed}`);
+//   }
+//   changeYear(newValue) {
+//     console.log(`Year was changed on ${(this.year = newValue)}`);
+//   }
+//   addDriver(driver) {
+//     this.driver = driver;
+//   }
+// }
+
+// let classCar = new CarCreator("Opel", "Germany", 2014, 300);
+// classCar.drive();
+// classCar.info();
+// classCar.increaseMaxSpeed(100);
+// classCar.changeYear(2020);
+// classCar.addDriver(carDriver);
+
+// -створити класс попелюшка з полями ім'я, вік, розмір ноги
+// --Створити 10 попелюшок , покласти їх в масив
+// --Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+// -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
+
+// class Popelushka {
+//   constructor(name, age, footSize) {
+//     this.name = name;
+//     this.age = age;
+//     this.footSize = footSize;
+//   }
+// }
+// class Prince {
+//   constructor(name, age, findedShoesSize) {
+//     this.name = name;
+//     this.age = age;
+//     this.findedShoesSize = findedShoesSize;
+//   }
+// }
+
+// let prince = new Prince("Gerald", 33, 40);
+
+// let popelushka1 = new Popelushka("Vika", 25, 38);
+// let popelushka2 = new Popelushka("Katia", 30, 38);
+// let popelushka3 = new Popelushka("Olena", 50, 42);
+// let popelushka4 = new Popelushka("Nastia", 24, 41);
+// let popelushka5 = new Popelushka("Yulia", 29, 43);
+// let popelushka6 = new Popelushka("Margarita", 32, 39);
+// let popelushka7 = new Popelushka("Ira", 23, 40);
+// let popelushka8 = new Popelushka("Sveta", 19, 39);
+// let popelushka9 = new Popelushka("Tania", 22, 31);
+// let popelushka10 = new Popelushka("Olia", 29, 32);
+
+// let cinderellas = [
+//   popelushka1,
+//   popelushka2,
+//   popelushka3,
+//   popelushka4,
+//   popelushka5,
+//   popelushka6,
+//   popelushka7,
+//   popelushka8,
+//   popelushka9,
+//   popelushka10,
+// ];
+
+// for (let princes of cinderellas) {
+//   if (princes.footSize === prince.findedShoesSize) {
+//     console.log(princes);
+//   }
+// }
+
+// -створити функцію конструктор попелюшка з полями ім'я, вік, розмір ноги
+// --Створити 10 попелюшок , покласти їх в масив
+// --Сторити об'єкт типу "принц" за допомоги функції конструктора з полями ім'я, вік, туфелька яку він знайшов, та функцію "пошук попелюшки"
+// -- функція повинна приймати масив попелюшок, та шукає ту котра йому підходить
+
+function Popelushka(name, age, footSize) {
+  this.name = name;
+  this.age = age;
+  this.footSize = footSize;
+}
+function Prince(name, age, findedShoesSize) {
+  this.name = name;
+  this.age = age;
+  this.findedShoesSize = findedShoesSize;
 }
 
-let newCar = carConstructor("Opel", "Germany", 2014, 300, carDriver);
+let prince = new Prince("Gerald", 33, 40);
+
+let popelushka1 = new Popelushka("Vika", 25, 38);
+let popelushka2 = new Popelushka("Katia", 30, 38);
+let popelushka3 = new Popelushka("Olena", 50, 42);
+let popelushka4 = new Popelushka("Nastia", 24, 41);
+let popelushka5 = new Popelushka("Yulia", 29, 43);
+let popelushka6 = new Popelushka("Margarita", 32, 39);
+let popelushka7 = new Popelushka("Ira", 23, 40);
+let popelushka8 = new Popelushka("Sveta", 19, 39);
+let popelushka9 = new Popelushka("Tania", 22, 31);
+let popelushka10 = new Popelushka("Olia", 29, 32);
+
+let cinderellas = [
+  popelushka1,
+  popelushka2,
+  popelushka3,
+  popelushka4,
+  popelushka5,
+  popelushka6,
+  popelushka7,
+  popelushka8,
+  popelushka9,
+  popelushka10,
+];
+function findCinderella(cinderellaArr, prince) {
+  for (let princes of cinderellaArr) {
+    if (princes.footSize === prince.findedShoesSize) {
+      console.log(princes);
+    }
+  }
+}
+
+findCinderella(cinderellas, prince);
