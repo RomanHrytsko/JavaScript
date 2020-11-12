@@ -194,10 +194,28 @@ const car = {
   creator: "Germany",
   year: 2014,
   maxSpeed: 210,
+  drive: function () {
+    console.log(`їдемо зі швидкістю ${this.maxSpeed}km на годину`);
+  },
+  info: function () {
+    console.log(this);
+  },
+  increaseMaxSpeed: function (newspeed) {
+    car.maxSpeed += newspeed;
+    console.log(`New max speed ${car.maxSpeed}`);
+  },
+  changeYear: function (newValue) {
+    car.year += newValue;
+    console.log(`Car year was updated to ${car.year}`);
+  },
+  addDriver: function (driver) {
+    car.driver = driver;
+    console.log(car);
+  },
 };
 
 // function drive(speed) {
-//   console.log(`їдемо зі швидкістю ${speed}km на годину`);
+//   console.log(`їдемо зі швидкістю ${this.maxSpeed}km на годину`);
 // }
 // function info(obj) {
 //   for (elem in obj) {

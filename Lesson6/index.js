@@ -165,15 +165,15 @@ let users = [
 // console.log(nameLenghtSortToMin);
 
 //- пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор (По якому принципу його створювати - ваше рішення), та зберегти це в новий масив (первинний масив залишиться без змін)
-let newUsers = JSON.stringify(users);
-let parsedUsers = JSON.parse(newUsers);
+// let newUsers = JSON.stringify(users);
+// let parsedUsers = JSON.parse(newUsers);
 
-parsedUsers.map((user, index) => {
-  user.id = index;
-});
+// parsedUsers.map((user, index) => {
+//   user.id = index;
+// });
 
-//- відсортувати його за індентифікатором
-parsedUsers.sort((a, b) => {
-  return b.id - a.id;
-});
-console.log(parsedUsers);
+// //- відсортувати його за індентифікатором
+// parsedUsers.sort((a, b) => {
+//   return b.id - a.id;
+// });
+// console.log(parsedUsers);
