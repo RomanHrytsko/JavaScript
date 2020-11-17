@@ -105,25 +105,25 @@
 //   let divBlock = document.createElement(div);
 
 //   document.body.appendChild(divBlock);
-//   divBlock.appendChild(table);
-//   for (let i = 0; i <= rowsInTable; i++) {
-//     let row = document.createElement("tr");
-//     table.appendChild(row);
+// //   divBlock.appendChild(table);
+// //   for (let i = 0; i <= rowsInTable; i++) {
+// //     let row = document.createElement("tr");
+// //     table.appendChild(row);
 
-//     for (let j = 1; j <= blocksInRow; j++) {
-//       let block = document.createElement("td");
-//       block.style.border = "1px solid black";
-//       block.innerHTML = `block number ${j}`;
-//       row.appendChild(block);
-//     }
-//   }
-//   table.style.border = "1px solid black";
-// }
-// myTable(5, 3, "div");
+// //     for (let j = 1; j <= blocksInRow; j++) {
+// //       let block = document.createElement("td");
+// //       block.style.border = "1px solid black";
+// //       block.innerHTML = `block number ${j}`;
+// //       row.appendChild(block);
+// //     }
+// //   }
+// //   table.style.border = "1px solid black";
+// // }
+// // myTable(5, 3, "div");
 
-// - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
-// При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
-// (Додатковачастина для завдання)
+// // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+// // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+// // (Додатковачастина для завдання)
 
 // //ELEMS
 // let input1 = document.createElement("input");
@@ -189,19 +189,25 @@
 // document.body.appendChild(divBlock);
 // divBlock.appendChild(leftBtn);
 // divBlock.appendChild(imageBlock);
+// divBlock.appendChild(rightBtn);
 // //STYLES
 
 // divBlock.style.display = "flex";
 
 // //FUCNTION
+// for (let image of imgArr) {
+//   imageBlock.appendChild(image);
+// }
+
 // let index = 0;
 // const activeSlide = (n) => {
 //   for (let img of imgArr) {
 //     img.style.display = "none";
-//     imageBlock.appendChild(img);
 //   }
 //   imgArr[n].style.display = "block";
 // };
+
+// activeSlide(0);
 
 // const nextSlide = () => {
 //   if (index == imgArr.length - 1) {
@@ -221,6 +227,7 @@
 //     activeSlide(index);
 //   }
 // };
+
 // rightBtn.addEventListener("click", nextSlide);
 // leftBtn.addEventListener("click", prevSlide);
 
@@ -232,45 +239,53 @@
 // кинути алерт з попередженням.
 // Перевірку робити при натисканні на кнопку
 
-const badWords = ["bliat", "bliat2", "bliat3"];
+// const badWords = ["bliat", "bliat2", "bliat3"];
 
-let badWordsButton = document.createElement("button");
-let badWordsInput = document.createElement("input");
-badWordsButton.innerHTML = "Check words";
-badWordsButton.onclick = badWords.find((value) => {
-  if (badWordsInput.value === value) {
-    alert("Please stop!!!!");
-  } else {
-    alert("Ok,fine");
-  }
-});
-
+// let badWordsButton = document.createElement("button");
+// let badWordsInput = document.createElement("input");
+// badWordsButton.innerHTML = "Check words";
 // badWordsButton.onclick = () => {
-//   if (badWordsInput.value === badWord) {
-//     alert("Please stop!!!!");
-//   } else {
-//     alert("Ok,fine");
-//   }
+//   const foundWords = findBadWords(badWordsInput.value, badWords);
+//   alert(foundWords);
 // };
-// for (let i = 0; i < badWords.length; i++) {
+
+// const findBadWords = (string, badWords) => {
+//   const foundWords = [];
+//   badWords.forEach((word) => {
+//     if (string.includes(word)) {
+//       foundWords.push(word);
+//     }
+//   });
+
+//   return foundWords;
+// };
+
+// document.body.appendChild(badWordsButton);
+// document.body.appendChild(badWordsInput);
+
+// -- создать скрипт, который берет считывает на странице (rules.html) текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
+// При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
+
+// let h2Tags = document.getElementsByTagName("h2");
+// const wrapper = document.createElement("div");
+// let divv = document.getElementById("content");
+// const table = document.createElement("table");
+
+// console.log(h2Tags);
+
+// for (let i = 0; i < h2Tags.length; i++) {
+//   const td = document.createElement("td");
+//   const tr = document.createElement("tr");
+//   let link = document.createElement("a");
+//   link.setAttribute("href", `#${h2Tags[i].id}`);
+//   link.innerHTML = h2Tags[i].innerText;
+
+//   td.appendChild(link);
+//   tr.appendChild(td);
+//   wrapper.appendChild(tr);
+//   wrapper.style.display = "flex";
+//   wrapper.style.flexDirection = "column";
 
 // }
-// if (badWordsInput.value === badWords[i]) {
-//   alert("Please stop!!!!");
-// } else {
-//   alert("Ok,fine");
-// }
-// };
-// for (word of badWords) {
-//   if (badWordsInput.value === word) {
-//     alert("Please stop!!!!");
-//     break;
-//   } else {
-//     alert("Ok,fine");
-//     break;
-//   }
-// }
-// // };
 
-document.body.appendChild(badWordsButton);
-document.body.appendChild(badWordsInput);
+document.body.prepend(wrapper);
