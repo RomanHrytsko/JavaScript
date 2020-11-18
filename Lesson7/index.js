@@ -380,72 +380,63 @@ let usersWithAddress = [
   },
 ];
 
-// CHECK BOXES
+const content = document.createElement("div");
+const userDiv = document.createElement("div");
 
-class CheckBoxConstructor {
-  constructor(nameOfId, textInner, arrUsers) {
-    this.nameOfId = nameOfId;
-    this.textInner = textInner;
-    const checkBox = document.createElement("input");
-    const label = document.createElement("label");
-    let divStatus = document.createElement("div");
+userDiv.appendChild(renderContent(usersWithAddress));
 
-    if (checkBox.id == "statusCheckBox") {
-      status(arrUsers);
-      console.log(status(arrUsers));
-    }
+const input1 = document.createElement("input");
+const input2 = document.createElement("input");
+const input3 = document.createElement("input");
 
-    divStatus.style.display = "flex";
+const label1 = document.createElement("label");
+const label2 = document.createElement("label");
+const label3 = document.createElement("label");
 
-    checkBox.setAttribute("type", "checkbox");
-    checkBox.setAttribute("id", nameOfId);
+const button = document.createElement("button");
 
-    label.setAttribute("for", nameOfId);
-    label.innerHTML = textInner;
+label1.innerText = "со статусом false";
+label2.innerText = "старше 29 лет";
+label3.innerText = "город Киев";
 
-    divStatus.appendChild(checkBox);
-    divStatus.appendChild(label);
-    document.body.appendChild(divStatus);
+button.innerText = "Filter users";
+
+input1.type = "checkbox";
+input2.type = "checkbox";
+input3.type = "checkbox";
+
+content.appendChild(userDiv);
+
+content.appendChild(input1);
+content.appendChild(label1);
+content.appendChild(input2);
+content.appendChild(label2);
+content.appendChild(input3);
+content.appendChild(label3);
+content.appendChild(button);
+
+button.onclick = (ev) => {
+  let myArr = JSON.parse(JSON.stringify(usersWithAddress));
+  if (input1.checked) {
+    myArr = myArr.filter((value) => !value.status);
   }
-  status(arr) {
-    arr.filter((value) => {
-      if (value.status == true) {
-        return true;
-      }
-      console.log(value);
-    });
+  if (input2.checked) {
+    myArr = myArr.filter((value) => value.age > 29);
   }
+  if (input3.checked) {
+    myArr = myArr.filter((value) => value.address.city === "Kyiv");
+  }
+
+  userDiv.innerHTML = "";
+  userDiv.appendChild(renderContent(myArr));
+};
+function renderContent(arr) {
+  const main = document.createElement("div");
+  arr.forEach((item) => {
+    const div = document.createElement("div");
+    div.innerHTML = JSON.stringify(item);
+    main.appendChild(div);
+  });
+  return main;
 }
-
-let statusCheckBox = new CheckBoxConstructor(
-  "statusCheckBox",
-  "Users with status False"
-);
-let ageCheckBox = new CheckBoxConstructor(
-  "ageCheckBox",
-  "Users older than 29 years age"
-);
-let cityCheckBox = new CheckBoxConstructor(
-  "cityCheckBox",
-  "Users who live in Kyiv"
-);
-
-// let filterStatus = usersWithAddress.filter((value) => {
-//   if (value.status === false) {
-//     return true;
-//   }
-// });
-// console.log(filterStatus);
-
-// let filterAge = usersWithAddress.filter((value) => {
-//   if (value.age > 29) {
-//     return true;
-//   }
-// });
-// console.log(filterAge);
-
-// let filterCity = usersWithAddress.filter((value) => {
-//   if (value.address.city == "Kyiv") {
-//     return true;
-//   }
-// });
+document.body.appendChild(content);
