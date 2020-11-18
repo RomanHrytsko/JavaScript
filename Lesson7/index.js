@@ -300,143 +300,143 @@
 // 2й - оставляет старше 29 лет включительно
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
-let usersWithAddress = [
-  {
-    id: 1,
-    name: "vasya",
-    age: 31,
-    status: false,
-    address: { city: "Lviv", street: "Shevchenko", number: 16 },
-  },
-  {
-    id: 2,
-    name: "petya",
-    age: 30,
-    status: true,
-    address: { city: "Kyiv", street: "Shevchenko", number: 1 },
-  },
-  {
-    id: 3,
-    name: "kolya",
-    age: 29,
-    status: true,
-    address: { city: "Lviv", street: "Shevchenko", number: 121 },
-  },
-  {
-    id: 4,
-    name: "olya",
-    age: 28,
-    status: false,
-    address: { city: "Ternopil", street: "Shevchenko", number: 90 },
-  },
-  {
-    id: 5,
-    name: "max",
-    age: 30,
-    status: true,
-    address: { city: "Lviv", street: "Shevchenko", number: 115 },
-  },
-  {
-    id: 6,
-    name: "anya",
-    age: 31,
-    status: false,
-    address: { city: "Kyiv", street: "Shevchenko", number: 2 },
-  },
-  {
-    id: 7,
-    name: "oleg",
-    age: 28,
-    status: false,
-    address: { city: "Ternopil", street: "Shevchenko", number: 22 },
-  },
-  {
-    id: 8,
-    name: "andrey",
-    age: 29,
-    status: true,
-    address: { city: "Lviv", street: "Shevchenko", number: 43 },
-  },
-  {
-    id: 9,
-    name: "masha",
-    age: 30,
-    status: true,
-    address: { city: "Kyiv", street: "Shevchenko", number: 12 },
-  },
-  {
-    id: 10,
-    name: "olya",
-    age: 31,
-    status: false,
-    address: { city: "Lviv", street: "Shevchenko", number: 16 },
-  },
-  {
-    id: 11,
-    name: "max",
-    age: 31,
-    status: true,
-    address: { city: "Ternopil", street: "Shevchenko", number: 121 },
-  },
-];
+// let usersWithAddress = [
+//   {
+//     id: 1,
+//     name: "vasya",
+//     age: 31,
+//     status: false,
+//     address: { city: "Lviv", street: "Shevchenko", number: 16 },
+//   },
+//   {
+//     id: 2,
+//     name: "petya",
+//     age: 30,
+//     status: true,
+//     address: { city: "Kyiv", street: "Shevchenko", number: 1 },
+//   },
+//   {
+//     id: 3,
+//     name: "kolya",
+//     age: 29,
+//     status: true,
+//     address: { city: "Lviv", street: "Shevchenko", number: 121 },
+//   },
+//   {
+//     id: 4,
+//     name: "olya",
+//     age: 28,
+//     status: false,
+//     address: { city: "Ternopil", street: "Shevchenko", number: 90 },
+//   },
+//   {
+//     id: 5,
+//     name: "max",
+//     age: 30,
+//     status: true,
+//     address: { city: "Lviv", street: "Shevchenko", number: 115 },
+//   },
+//   {
+//     id: 6,
+//     name: "anya",
+//     age: 31,
+//     status: false,
+//     address: { city: "Kyiv", street: "Shevchenko", number: 2 },
+//   },
+//   {
+//     id: 7,
+//     name: "oleg",
+//     age: 28,
+//     status: false,
+//     address: { city: "Ternopil", street: "Shevchenko", number: 22 },
+//   },
+//   {
+//     id: 8,
+//     name: "andrey",
+//     age: 29,
+//     status: true,
+//     address: { city: "Lviv", street: "Shevchenko", number: 43 },
+//   },
+//   {
+//     id: 9,
+//     name: "masha",
+//     age: 30,
+//     status: true,
+//     address: { city: "Kyiv", street: "Shevchenko", number: 12 },
+//   },
+//   {
+//     id: 10,
+//     name: "olya",
+//     age: 31,
+//     status: false,
+//     address: { city: "Lviv", street: "Shevchenko", number: 16 },
+//   },
+//   {
+//     id: 11,
+//     name: "max",
+//     age: 31,
+//     status: true,
+//     address: { city: "Ternopil", street: "Shevchenko", number: 121 },
+//   },
+// ];
 
-const content = document.createElement("div");
-const userDiv = document.createElement("div");
+// const content = document.createElement("div");
+// const userDiv = document.createElement("div");
 
-userDiv.appendChild(renderContent(usersWithAddress));
+// userDiv.appendChild(renderContent(usersWithAddress));
 
-const input1 = document.createElement("input");
-const input2 = document.createElement("input");
-const input3 = document.createElement("input");
+// const input1 = document.createElement("input");
+// const input2 = document.createElement("input");
+// const input3 = document.createElement("input");
 
-const label1 = document.createElement("label");
-const label2 = document.createElement("label");
-const label3 = document.createElement("label");
+// const label1 = document.createElement("label");
+// const label2 = document.createElement("label");
+// const label3 = document.createElement("label");
 
-const button = document.createElement("button");
+// const button = document.createElement("button");
 
-label1.innerText = "со статусом false";
-label2.innerText = "старше 29 лет";
-label3.innerText = "город Киев";
+// label1.innerText = "со статусом false";
+// label2.innerText = "старше 29 лет";
+// label3.innerText = "город Киев";
 
-button.innerText = "Filter users";
+// button.innerText = "Filter users";
 
-input1.type = "checkbox";
-input2.type = "checkbox";
-input3.type = "checkbox";
+// input1.type = "checkbox";
+// input2.type = "checkbox";
+// input3.type = "checkbox";
 
-content.appendChild(userDiv);
+// content.appendChild(userDiv);
 
-content.appendChild(input1);
-content.appendChild(label1);
-content.appendChild(input2);
-content.appendChild(label2);
-content.appendChild(input3);
-content.appendChild(label3);
-content.appendChild(button);
+// content.appendChild(input1);
+// content.appendChild(label1);
+// content.appendChild(input2);
+// content.appendChild(label2);
+// content.appendChild(input3);
+// content.appendChild(label3);
+// content.appendChild(button);
 
-button.onclick = (ev) => {
-  let myArr = JSON.parse(JSON.stringify(usersWithAddress));
-  if (input1.checked) {
-    myArr = myArr.filter((value) => !value.status);
-  }
-  if (input2.checked) {
-    myArr = myArr.filter((value) => value.age > 29);
-  }
-  if (input3.checked) {
-    myArr = myArr.filter((value) => value.address.city === "Kyiv");
-  }
+// button.onclick = (ev) => {
+//   let myArr = JSON.parse(JSON.stringify(usersWithAddress));
+//   if (input1.checked) {
+//     myArr = myArr.filter((value) => !value.status);
+//   }
+//   if (input2.checked) {
+//     myArr = myArr.filter((value) => value.age > 29);
+//   }
+//   if (input3.checked) {
+//     myArr = myArr.filter((value) => value.address.city === "Kyiv");
+//   }
 
-  userDiv.innerHTML = "";
-  userDiv.appendChild(renderContent(myArr));
-};
-function renderContent(arr) {
-  const main = document.createElement("div");
-  arr.forEach((item) => {
-    const div = document.createElement("div");
-    div.innerHTML = JSON.stringify(item);
-    main.appendChild(div);
-  });
-  return main;
-}
-document.body.appendChild(content);
+//   userDiv.innerHTML = "";
+//   userDiv.appendChild(renderContent(myArr));
+// };
+// function renderContent(arr) {
+//   const main = document.createElement("div");
+//   arr.forEach((item) => {
+//     const div = document.createElement("div");
+//     div.innerHTML = JSON.stringify(item);
+//     main.appendChild(div);
+//   });
+//   return main;
+// }
+// document.body.appendChild(content);
