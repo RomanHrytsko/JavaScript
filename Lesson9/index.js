@@ -356,33 +356,62 @@ function randomNumb(max) {
   return Math.floor(Math.random(100) * Math.floor(max)); /// Функцыя яка рандомить мені інтервал
 }
 
-function vehicle(index) {
+function typer(index) {
   setTimeout(() => {
     if (!index) {
       index = 0;
     }
     if (index < arr.length) {
       console.log(arr[index]);
-      vehicle(++index);
+      typer(++index);
     }
   }, randomNumb(1000));
 }
-
-vehicle();
-// function vehicle() {
-//   return new Promise((resolve) => {
-//     for (let i = 0; i < arr.length; i++) {
-//       setTimeout(() => {
-//         if (i === arr.length) {
-//           return;
-//         } else if (arr[i]) {
-//           console.log(arr[i]);
-//         }
-//       }, randomNumb(1000));
+typer();
+// function vehicle(index) {
+//   setTimeout(() => {
+//     if (!index) {
+//       index = 0;
 //     }
+//     if (index < arr.length) {
+//       console.log(arr[index]);
+//       vehicle(++index);
+//     }
+//   }, randomNumb(1000));
+// }
+
+// vehicle();
+
+// function typer(string, i) {
+//   return new Promise((resolve) => {
+//     let letter = string.split("");
+//     setTimeout(() => {
+//       resolve(letter[i]);
+//     }, randomNumb(1000));
+//   });
+// }
+// async function cicle(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     const res = await typer(str, i);
+//     console.log(res);
+//   }
+// }
+// cicle("hello");
+
+// function typewriter(string, i) {
+//   return new Promise((resolve) => {
+//     let letters = string.split(``);
+//     setTimeout(() => {
+//       resolve(letters[i]);
+//     }, Math.random() * 1000);
 //   });
 // }
 
-// vehicle().then((res) => {
-//   console.log(res);
-// });
+// async function xXx(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     const value = await typewriter(str, i);
+//     console.log(value);
+//   }
+// }
+
+// xXx("Hello world")

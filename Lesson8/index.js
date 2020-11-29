@@ -2,6 +2,12 @@
 // В неё вводится текст.
 // Сделайте так, чтобы после захода на эту страницу через некоторое время, введенный текст остался в textarea.
 
+let textarea1 = document.getElementById("areaT1");
+textarea1.oninput = (ev) => {
+  localStorage.setItem("task1", ev.target.value);
+};
+textarea1.value = localStorage.getItem("task1");
+
 // let div = document.createElement("div");
 // let wrapper = document.createElement("div");
 // let textarea = document.createElement("textarea");
@@ -21,6 +27,47 @@
 // Пользователь вводит какие-то данные и закрывает страницу (не факт, что он заполнил всю форму).
 // Сделайте так, чтобы при следующем заходе на страницу введенные им ранее данные стояли на своих местах.
 // Сделайте ваш скрипт как можно более универсальным.
+let form = document.getElementById("form");
+let nameInp = document.getElementById("nameInp");
+let surnameInp = document.getElementById("surnameInp");
+let ageInp = document.getElementById("ageInp");
+let textareT2 = document.getElementById("textareT2");
+
+let check1 = document.getElementById("check1");
+let check2 = document.getElementById("check2");
+
+let radio1 = document.getElementById("radio1");
+let radio2 = document.getElementById("radio2");
+
+let select = document.getElementById("select");
+
+form.oninput = () => {
+  let info = {
+    name: nameInp.value,
+    surname: surnameInp.value,
+    radio1: radio1.value,
+    radio2: radio2.value,
+  };
+  localStorage.setItem("form", JSON.stringify(info));
+  let info2 = JSON.parse(localStorage.getItem("form"));
+
+  console.log(info2);
+};
+
+// surnameInp.oninput = () => {
+//   localStorage.setItem("surname", surnameInp.value);
+// };
+// surnameInp.value = localStorage.getItem("surname");
+
+// ageInp.oninput = () => {
+//   localStorage.setItem("age", ageInp.value);
+// };
+// ageInp.value = localStorage.getItem("age");
+
+// textareT2.oninput = () => {
+//   localStorage.setItem("textare2", textareT2.value);
+// };
+// textareT2.value = localStorage.getItem("textare2");
 
 // let form = document.getElementById("form");
 // getData(form);
