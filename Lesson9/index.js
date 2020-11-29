@@ -349,56 +349,40 @@
 // l (затримка 0.7)
 // о (затримка 1)
 
-// let string = "Hello_World";
-
-// let nww = string.split("");
-// console.log(nww);
-
-// console.log(nww.length);
-
-// for (let i = 0; i < nww.length; i++) {
-//   setTimeout(() => {
-//     console.log(nww[i]);
-//   }, randomNumb(1000));
-// }
-
-// // function printMachine(string){
-// //   let
-// // }
+let string = "Hello World";
+let arr = string.split("");
 
 function randomNumb(max) {
-  return Math.floor(Math.random(100) * Math.floor(max));
-}
-let string = "Hello World";
-let neww = string.split("");
-function printH(string) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (string !== "H") {
-        reject("err");
-        return;
-      }
-      resolve("H");
-    });
-  }, 2000);
-}
-function printE(string) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (string !== "e") {
-        reject("err");
-        return;
-      }
-      resolve("e");
-    });
-  }, 2000);
+  return Math.floor(Math.random(100) * Math.floor(max)); /// Функцыя яка рандомить мені інтервал
 }
 
-printH(neww[0])
-  .then((res) => {
-    console.log(res);
-    return printE(neww[1]);
-  })
-  .then((res) => {
-    console.log(res);
-  });
+function vehicle(index) {
+  setTimeout(() => {
+    if (!index) {
+      index = 0;
+    }
+    if (index < arr.length) {
+      console.log(arr[index]);
+      vehicle(++index);
+    }
+  }, randomNumb(1000));
+}
+
+vehicle();
+// function vehicle() {
+//   return new Promise((resolve) => {
+//     for (let i = 0; i < arr.length; i++) {
+//       setTimeout(() => {
+//         if (i === arr.length) {
+//           return;
+//         } else if (arr[i]) {
+//           console.log(arr[i]);
+//         }
+//       }, randomNumb(1000));
+//     }
+//   });
+// }
+
+// vehicle().then((res) => {
+//   console.log(res);
+// });
